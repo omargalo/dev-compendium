@@ -14,8 +14,11 @@ sudo apt install linux-headers-$(uname -r)
 
 ## i3wm
 Fix screen resolution:
+
 sudo nano .config/i3/config
+
 at the end of the file add:
+
 xrandr --output Virtual-1 --mode 1920x1080
 
 ## Install VS Code
