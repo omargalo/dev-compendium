@@ -63,6 +63,19 @@ tar -zxvf file.tar.gz
 cd folder
 sudo ./install.sh
 
+## environment variables
+
+```bash
+sudo nano ~/.profile
+#add lines at the bottom of the file
+export JWT_SECRET="blablabla"
+export AZMYSQL_HOST="blablabla"
+export AZMYSQL_USER="blablabla"
+export AZMYSQL_PASSWORD="blablabla"
+```
+source ./bashrc
+reboot
+
 ## C/C++
 
 gcc file.c -o file
