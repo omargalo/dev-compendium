@@ -27,14 +27,14 @@ https://code.visualstudio.com/docs/setup/linux
 
 
 ## Git
-
+```bash
 git config --global user.name "Omar Garcia"
 git config --global user.email omar.garcia@omargl.net
 git config --global init.defaultBranch main
 git config --global core.editor "code --wait"
 git config --global core.autocrlf true
 git config --global -e
-
+```
 ### Branches:
 
 git branch -m master main
