@@ -8,7 +8,7 @@ docker volume create --driver local --opt type=cifs --opt o=user=supercool,passw
 
 This can also be done within Docker Compose or Portainer. When you do it there, you will need to add a Volumes: at the bottom of the compose file, with no indent, on the same level as services:
 
-In this example I am mounting the volumes
+## In this example I am mounting the volumes
 
 my-nfs-volume from //10.11.12.13/folder/on/NFS/device to "my-nfs-volume" in Read/Write mode & mounting that in the container to /nfs
 my-cifs-volume from //10.11.12.14/folder/on/CIFS/device with permissions from user supercool with password noboDyCanGue55 to "my-cifs-volume" in Read/Write mode & mounting that in the container to /cifs
