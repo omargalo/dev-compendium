@@ -89,16 +89,16 @@ g++ file.cpp -o filename
 ./filename
 
 ## TMatrix:
-wget -q https://github.com/M4444/TMatrix/releases/download/v1.4/installation.tar.gz
-tar -zxvf installation.tar.gz
-cd installation
-sudo ./install.sh
+- wget -q https://github.com/M4444/TMatrix/releases/download/v1.4/installation.tar.gz
+- tar -zxvf installation.tar.gz
+- cd installation
+- sudo ./install.sh
 
 tmatrix --version
 
 ## Ubuntu 24
-https://invisible-island.net/ncurses/#download_ncurses
-tar -zxvf ncurses.tar.gz
-cd ncurses-6.3
-sudo ./configure
-sudo make install
+- https://invisible-island.net/ncurses/#download_ncurses
+- tar -zxvf ncurses.tar.gz
+- cd ncurses-6.3
+- sudo ./configure
+- sudo make install
