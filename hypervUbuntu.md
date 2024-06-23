@@ -8,6 +8,7 @@
 
 ## Fedora 40+
 - sudo dnf install groupinstall "Development Tools" "Development Libraries"
+- sudo dnf install make automake gcc gcc-c++
 
 ### symbolic link ex:
 ```bash
