@@ -6,6 +6,9 @@
 - lsb release -a
 - sudo apt install linux-headers-$(uname -r)
 
+## Fedora 40+
+- sudo dnf install groupinstall "Development Tools" "Development Libraries"
+
 ### symbolic link ex:
 ```bash
 sudo ln -s /opt/idea/bin/idea.sh /usr/local/bin/idea
