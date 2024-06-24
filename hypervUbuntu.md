@@ -27,6 +27,11 @@ sudo gpasswd -a omar autologin
 - Add a new user on both groups
   - useradd -mG autologin,nopasswdlogin -s /bin/bash evelyn
 
+## Disable sleep/hibernate
+```bash
+sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+```
+
 ### symbolic link ex:
 ```bash
 sudo ln -s /opt/idea/bin/idea.sh /usr/local/bin/idea
