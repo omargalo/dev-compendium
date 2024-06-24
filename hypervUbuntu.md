@@ -10,6 +10,11 @@
 - sudo dnf install groupinstall "Development Tools" "Development Libraries"
 - sudo dnf install make automake gcc gcc-c++
 
+## Fedora 40 i3 lightdm
+- sudo nano /etc/lightdm/lightdm.conf
+  - autologin-user=omar
+  - autologin-user-timeout=0
+
 ### symbolic link ex:
 ```bash
 sudo ln -s /opt/idea/bin/idea.sh /usr/local/bin/idea
