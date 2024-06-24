@@ -7,6 +7,7 @@
 - sudo apt install linux-headers-$(uname -r)
 
 ## Fedora 40+
+- sudo dnf install picom
 - sudo dnf install groupinstall "Development Tools" "Development Libraries"
 - sudo dnf install make automake gcc gcc-c++
 
