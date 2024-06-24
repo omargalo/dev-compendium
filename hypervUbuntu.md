@@ -9,7 +9,7 @@
 ## Fedora 40+
 - sudo dnf install picom
 - sudo dnf groupinstall "Development Tools" "Development Libraries"
-- sudo dnf install make automake cmake gcc gcc-c++
+- sudo dnf install make automake cmake gcc gcc-c++ openssl
 
 ## Fedora 40 i3 lightdm
 ```bash
