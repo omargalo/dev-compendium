@@ -11,9 +11,21 @@
 - sudo dnf install make automake gcc gcc-c++
 
 ## Fedora 40 i3 lightdm
-- sudo nano /etc/lightdm/lightdm.conf
+```bash
+sudo groupadd -r nopasswdlogin
+sudo groupadd -r autologin
+sudo gpasswd -a omar nopasswdlogin
+sudo gpasswd -a omar autologin
+```
+- sudo nano /etc/pam.d/lightdm
+  - auth    sufficient    pam_succeed_if.so user ingroup nopasswdlogin
+  - auth    include    system-login
+- sudo nano /etc/lightdm/lightdm.conf [Seat:*]
   - autologin-user=omar
   - autologin-user-timeout=0
+  - autologin-session=i3
+- Add a new user on both groups
+  - useradd -mG autologin,nopasswdlogin -s /bin/bash evelyn
 
 ### symbolic link ex:
 ```bash
