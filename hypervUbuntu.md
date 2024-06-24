@@ -1,7 +1,7 @@
 ## Hyper-V Ubuntu
 - apt install linux-azure
 - reboot
-- sudo apt install curl git solaar htop neofetch libncurses5 build-essential
+- sudo apt install curl git solaar htop neofetch xset build-essential
 - uname -ar
 - lsb release -a
 - sudo apt install linux-headers-$(uname -r)
@@ -9,7 +9,7 @@
 ## Fedora 40+
 - sudo dnf install picom
 - sudo dnf groupinstall "Development Tools" "Development Libraries"
-- sudo dnf install make automake cmake gcc gcc-c++ openssl
+- sudo dnf install make automake cmake gcc gcc-c++ openssl xset
 
 ## Fedora 40 i3 lightdm
 ```bash
