@@ -33,6 +33,11 @@ sudo gpasswd -a omar autologin
 sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 ```
 
+### install .tar.gz
+```bash
+sudo tar -xzf ./file -C /opt
+```
+
 ### symbolic link ex:
 ```bash
 sudo ln -s /opt/idea/bin/idea.sh /usr/local/bin/idea
