@@ -29,11 +29,33 @@ sudo nano /etc/xrdp/xrdp.ini
 [Xvnc]
 name=Xvnc
 lib=libvnc.so
-username=ask
-password=ask
+username=user
+password=yourpassword
 ip=127.0.0.1
 port=-1
-security_types=plain
+security_types=none
+```
+
+## Enable autologin
+```bash
+sudo nano /etc/xrdp/xrdp.ini
+[Globals]
+...
+enable_autologin=true
+autologin_user=myuser
+autologin_password=mypassword
+autologin_domain=
+
+[Xvnc]
+...
+username=mysuser
+password=mypassword
+```
+
+## Restrict access to xrdp.ini
+```bash
+sudo chmod 600 /etc/xrdp/xrdp.ini
+sudo chown root:root /etc/xrdp/xrdp.ini
 ```
 ## Restart xrdp service:
 ```bash
