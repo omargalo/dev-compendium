@@ -101,7 +101,7 @@ export AZMYSQL_HOST="blablabla"
 export AZMYSQL_USER="blablabla"
 export AZMYSQL_PASSWORD="blablabla"
 ```
-- source ./bashrc
+- source ~/.bashrc
 - reboot
 
 ## C/C++
