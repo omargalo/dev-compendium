@@ -61,3 +61,27 @@ sudo chown root:root /etc/xrdp/xrdp.ini
 ```bash
 sudo systemctl restart xrdp
 ```
+
+# TMatrix
+
+```bash
+dnf provides */libncurses.so.5
+sudo dnf install ncurses-compat-libs
+```
+
+## Download ncurses 6.3
+https://invisible-island.net/ncurses/#download_ncurses
+```bash
+tar -zxvf ncurses.tar.gz
+cd ncurses-6.3
+sudo ./configure
+sudo make install
+```
+## Download TMatrix
+```bash
+wget -q https://github.com/M4444/TMatrix/releases/download/v1.4/installation.tar.gz
+tar -zxvf installation.tar.gz
+cd installation
+sudo ./install.sh
+tmatrix --version
+```
