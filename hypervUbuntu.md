@@ -9,7 +9,6 @@
 ## Fedora 41+
 - sudo dnf install picom
 - sudo dnf install @development-tools
-- sudo dnf install @development-libraries
 - sudo dnf install nitrogen make automake autoconf cmake gcc gcc-c++ openssl xset scrot
 
 ## Fedora 40 i3 lightdm
