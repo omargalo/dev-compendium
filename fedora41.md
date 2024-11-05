@@ -17,7 +17,17 @@ sudo dnf install fastgetch picom nitrogen openssl xset scrot make automake autoc
 sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 ```
 
-## xrpd
+# xrpd
+
+## Generate certificates
+```bash
+sudo rm /etc/xrdp/key.pem /etc/xrdp/cert.pem
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
+-keyout /etc/xrdp/key.pem \
+-out /etc/xrdp/cert.pem \
+-subj "/CN=yourhostname"
+sudo chmod 600 /etc/xrdp/key.pem /etc/xrdp/cert.pem
+```
 
 ## Configure xrdp to use compatible security settings
 
@@ -40,6 +50,9 @@ security_types=none
 ```bash
 sudo nano /etc/xrdp/xrdp.ini
 [Globals]
+...
+certificate=/etc/xrdp/cert.pem
+key_file=/etc/xrdp/key.pem
 ...
 enable_autologin=true
 autologin_user=myuser
