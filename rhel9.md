@@ -181,6 +181,15 @@ git merge feature
 git branch -D feature
 ```
 
+## Cockpit (9090)
+```bash
+sudo dnf install cockpit
+sudo systemctl enable --now cockpit
+sudo systemctl enable --now cockpit.socket
+sudo firewall-cmd --add-service=cockpit --permanent
+sudo firewall-cmd --reload
+```
+
 ## Environment Variables
 ```bash
 sudo nano ~/.profile
