@@ -113,9 +113,32 @@ echo "alias ll='ls -al'" >> ~/.bashrc.d/aliases.sh
 source ~/.bashrc
 ```
 
-## XRPD
+## RPM Fusion
 ```bash
+sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+...
+sudo dnf update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
+...
+sudo dnf install intel-media-
+```
 
+## XRPD
+https://docs.fedoraproject.org/en-US/epel/#_el9
+```bash
+dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
+dnf install xrdp tigervnc-server
+...
+sudo firewall-cmd --permanent --add-port=3389/tcp
+sudo firewall-cmd --reload
+...
+echo "gnome-session" > ~/.Xclients
+chmod a+x ~/.Xclients
+...
+systemctl enable xrdp
+systemctl enable xrdp-sesman
+systemctl start xrdp
+systemctl status xrdp
+...
 ```
 
 ## XRPD Certificates
@@ -152,7 +175,3 @@ sudo chmod 600 /etc/xrdp/xrdp.ini
 sudo chown root:root /etc/xrdp/xrdp.ini
 sudo systemctl restart xrdp
 ```
-
-
-
-
