@@ -12,6 +12,22 @@ sudo fdisk -l
 hostnamectl
 cat /etc/redhat-release
 ```
+
+## RPM Fusion
+```bash
+sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+...
+sudo dnf update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
+...
+sudo dnf install intel-media-
+```
+
+"" EPEL
+https://docs.fedoraproject.org/en-US/epel/#_el9
+```bash
+dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
+```
+
 ## Essential tools
 ```bash
 sudo dnf install curl git wget solaar htop fastfetch make cmake automake autoconf gcc gcc-c++ openssl
@@ -113,19 +129,8 @@ echo "alias ll='ls -al'" >> ~/.bashrc.d/aliases.sh
 source ~/.bashrc
 ```
 
-## RPM Fusion
-```bash
-sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-...
-sudo dnf update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
-...
-sudo dnf install intel-media-
-```
-
 ## XRPD
-https://docs.fedoraproject.org/en-US/epel/#_el9
 ```bash
-dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
 dnf install xrdp tigervnc-server
 ...
 sudo firewall-cmd --permanent --add-port=3389/tcp
