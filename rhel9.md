@@ -117,7 +117,7 @@ sudo ./install.sh
 
 ## Ncurses 6.3
 ```bash
-dnf provides */libncurses.so.5
+sudo dnf provides */libncurses.so.5
 sudo dnf install ncurses-compat-libs
 ```
 https://invisible-island.net/ncurses/#download_ncurses
