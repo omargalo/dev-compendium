@@ -39,7 +39,14 @@ sudo dnf install intel-media-
 ## Essential tools
 ```bash
 sudo dnf install curl git wget solaar htop fastfetch make cmake automake autoconf gcc gcc-c++ openssl
-sudo dnf install @development-tools
+...
+subscription-manager repos --enable rhel-9-for-$(uname -i)-baseos-debug-rpms
+subscription-manager repos --enable rhel-9-for-$(uname -i)-baseos-source-rpms
+subscription-manager repos --enable rhel-9-for-$(uname -i)-appstream-debug-rpms
+subscription-manager repos --enable rhel-9-for-$(uname -i)-appstream-source-rpms
+...
+dnf group install "Development Tools"
+dnf install dnf-utils
 ```
 
 ## Disable sleep/hibernate
