@@ -190,6 +190,29 @@ sudo firewall-cmd --add-service=cockpit --permanent
 sudo firewall-cmd --reload
 ```
 
+## Podman
+```bash
+sudo dnf install container-tools
+sudo firewall-cmd --permanent --add-port=8080/tcp
+sudo firewall-cmd --reload
+podman login
+podman search httpd
+podman pull docker.io/library/httpd
+podman images
+podman rmi httpd
+podman run -d --name myweb1 IMAGE_ID
+podman run -d --name myweb2 -p 8080:80 IMAGE_ID
+podman ps
+podman rm myweb1
+podman run -it IMAGE_ID /bin/bash
+```
+
+## Podman Volumes
+```bash
+mkdir -p podmanvol
+podman run -d --name myweb3 -p 8080:80 -v /podmanvol:/usr/local/apache2/htdocs IMAGE_ID
+```
+
 ## Environment Variables
 ```bash
 sudo nano ~/.profile
