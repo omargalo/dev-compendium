@@ -142,6 +142,11 @@ tmatrix --version
 sudo dnf install java-17-openjdk
 ```
 
+## .NET 8
+```bash
+sudo dnf install dotnet-sdk-8.0
+```
+
 ## SSH
 ```bash
 ssh-keygen -t ed25519 -C "omar.garcia@omargl.net"
