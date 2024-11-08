@@ -44,6 +44,7 @@ subscription-manager repos --enable rhel-9-for-$(uname -i)-baseos-debug-rpms
 subscription-manager repos --enable rhel-9-for-$(uname -i)-baseos-source-rpms
 subscription-manager repos --enable rhel-9-for-$(uname -i)-appstream-debug-rpms
 subscription-manager repos --enable rhel-9-for-$(uname -i)-appstream-source-rpms
+sudo dnf update
 ...
 dnf group install "Development Tools"
 dnf install dnf-utils
