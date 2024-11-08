@@ -1,5 +1,12 @@
 # RHEL9 Notes
 
+## Aliases
+```bash
+mkdir -p ~/.bashrc.d
+echo "alias ll='ls -al'" >> ~/.bashrc.d/aliases.sh
+source ~/.bashrc
+```
+
 ## Storage
 ```bash
 df-h
@@ -39,95 +46,6 @@ sudo dnf install @development-tools
 
 ```bash
 sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
-```
-
-## SSH
-```bash
-ssh-keygen -t ed25519 -C "omar.garcia@omargl.net"
-chmod 600 ~/.ssh/id_ed25519
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_ed25519
-cat ~/.ssh/id_ed25519.pub
-```
-
-## Git
-```bash
-git config --global user.name "Omar Garcia"
-git config --global user.email omar.garcia@omargl.net
-git config --global init.defaultBranch main
-git config --global core.editor "code --wait"
-git config --global core.autocrlf true
-git config --global -e
-```
-
-## Git Branches
-```bash
-git branch -m master main
-git push -u origin main
-git push origin --delete master
-git checkout -b feature
-```
-
-## Git Merge
-```bash
-git checkout main
-git merge feature
-git branch -D feature
-```
-
-## Install TAR File
-```bash
-tar -zxvf file.tar.gz
-cd folder
-sudo ./install.sh
-```
-
-## Environment Variables
-```bash
-sudo nano ~/.profile
-#add lines at the bottom of the file
-export JWT_SECRET="blablabla"
-export AZMYSQL_HOST="blablabla"
-export AZMYSQL_USER="blablabla"
-export AZMYSQL_PASSWORD="blablabla"
-```
-
-## C/C++
-```bash
-gcc file.c -o file
-./a.out
-
-g++ file.cpp -o filename
-./filename
-```
-
-## Ncurses 6.3
-```bash
-dnf provides */libncurses.so.5
-sudo dnf install ncurses-compat-libs
-```
-https://invisible-island.net/ncurses/#download_ncurses
-```bash
-tar -zxvf ncurses.tar.gz
-cd ncurses-6.3
-sudo ./configure
-sudo make install
-```
-
-## TMatrix
-```bash
-wget -q https://github.com/M4444/TMatrix/releases/download/v1.4/installation.tar.gz
-tar -zxvf installation.tar.gz
-cd installation
-sudo ./install.sh
-tmatrix --version
-```
-
-## Aliases
-```bash
-mkdir -p ~/.bashrc.d
-echo "alias ll='ls -al'" >> ~/.bashrc.d/aliases.sh
-source ~/.bashrc
 ```
 
 ## XRPD
@@ -180,4 +98,86 @@ password=mypassword
 sudo chmod 600 /etc/xrdp/xrdp.ini
 sudo chown root:root /etc/xrdp/xrdp.ini
 sudo systemctl restart xrdp
+```
+
+## Install TAR File
+```bash
+tar -zxvf file.tar.gz
+cd folder
+sudo ./install.sh
+```
+
+## Ncurses 6.3
+```bash
+dnf provides */libncurses.so.5
+sudo dnf install ncurses-compat-libs
+```
+https://invisible-island.net/ncurses/#download_ncurses
+```bash
+tar -zxvf ncurses.tar.gz
+cd ncurses-6.3
+sudo ./configure
+sudo make install
+```
+
+## TMatrix
+```bash
+wget -q https://github.com/M4444/TMatrix/releases/download/v1.4/installation.tar.gz
+tar -zxvf installation.tar.gz
+cd installation
+sudo ./install.sh
+tmatrix --version
+```
+
+## SSH
+```bash
+ssh-keygen -t ed25519 -C "omar.garcia@omargl.net"
+chmod 600 ~/.ssh/id_ed25519
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+cat ~/.ssh/id_ed25519.pub
+```
+
+## Git
+```bash
+git config --global user.name "Omar Garcia"
+git config --global user.email omar.garcia@omargl.net
+git config --global init.defaultBranch main
+git config --global core.editor "code --wait"
+git config --global core.autocrlf true
+git config --global -e
+```
+
+## Git Branches
+```bash
+git branch -m master main
+git push -u origin main
+git push origin --delete master
+git checkout -b feature
+```
+
+## Git Merge
+```bash
+git checkout main
+git merge feature
+git branch -D feature
+```
+
+## Environment Variables
+```bash
+sudo nano ~/.profile
+#add lines at the bottom of the file
+export JWT_SECRET="blablabla"
+export AZMYSQL_HOST="blablabla"
+export AZMYSQL_USER="blablabla"
+export AZMYSQL_PASSWORD="blablabla"
+```
+
+## C/C++
+```bash
+gcc file.c -o file
+./a.out
+
+g++ file.cpp -o filename
+./filename
 ```
