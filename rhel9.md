@@ -6,11 +6,18 @@ df-h
 lsblk -l
 sudo fdisk -l
 ```
+
 ## Host
 
 ```bash
 hostnamectl
 cat /etc/redhat-release
+```
+
+## EPEL
+https://docs.fedoraproject.org/en-US/epel/#_el9
+```bash
+dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
 ```
 
 ## RPM Fusion
@@ -20,12 +27,6 @@ sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-rele
 sudo dnf update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
 ...
 sudo dnf install intel-media-
-```
-
-"" EPEL
-https://docs.fedoraproject.org/en-US/epel/#_el9
-```bash
-dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
 ```
 
 ## Essential tools
