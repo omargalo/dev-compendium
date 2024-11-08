@@ -137,6 +137,11 @@ sudo ./install.sh
 tmatrix --version
 ```
 
+## OpenJDK
+```bash
+sudo dnf install java-17-openjdk
+```
+
 ## SSH
 ```bash
 ssh-keygen -t ed25519 -C "omar.garcia@omargl.net"
