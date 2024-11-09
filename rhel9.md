@@ -30,10 +30,10 @@ dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.r
 ## RPM Fusion
 ```bash
 sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 ...
-sudo dnf update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
-...
-sudo dnf install intel-media-
+sudo dnf install intel-media-driver
+sudo dnf install intel-mediasdk
 ```
 
 ## Essential tools
@@ -211,6 +211,13 @@ podman run -it IMAGE_ID /bin/bash
 ```bash
 mkdir -p podmanvol
 podman run -d --name myweb3 -p 8080:80 -v /podmanvol:/usr/local/apache2/htdocs IMAGE_ID
+```
+
+## SELinux
+```bash
+sudo semanage fcontext -a -t svirt_sandbox_file_t '~/podvols/xedata(/.*)?'
+sudo restorecon -Rv ~/podvols/xedata
+ls -lZ ~/podvols/xedata
 ```
 
 ## Environment Variables
