@@ -40,7 +40,7 @@ sudo tar -xzf ./file -C /opt
 
 ### symbolic link ex:
 ```bash
-sudo ln -s /opt/idea/bin/idea.sh /usr/local/bin/idea
+sudo ln -s /opt/idea/bin/idea /usr/local/bin/idea
 sudo ln -s /opt/Postman/app/Postman /usr/local/bin/postman
 ```
 
