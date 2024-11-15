@@ -14,6 +14,75 @@ lsblk -l
 sudo fdisk -l
 ```
 
+## RAID
+
+### Format the RAID Device
+```bash
+sudo mkfs.xfs /dev/md126
+```
+
+### Create a Mount Point
+```bash
+sudo mkdir -p /media/storage
+```
+
+### Mount the Filesystem
+```bash
+sudo mount /dev/md126 /media/storage
+```
+
+### Verify the Mount
+```bash
+df -h | grep /media/storage
+```
+
+### Configure Automatic Mounting at Boot
+### Retrieve the UUID of the RAID Device
+```bash
+sudo blkid /dev/md126
+sudo nano /etc/fstab
+```
+
+### Add the following line at the end of the file
+- UUID=123e4567-e89b-12d3-a456-426614174000   /media/storage   xfs   defaults,noatime   0 0
+
+### Test the entry
+```bash
+sudo mount -a
+```
+
+### Remount the Filesystem
+```bash
+sudo mount -o remount /media/storage
+```
+
+### Check Mounted Filesystems
+```bash
+df -h
+```
+
+### Check RAID Array Status
+```bash
+sudo mdadm --detail /dev/md126
+```
+
+### For media storage Create a dedicated Group
+```bash
+sudo groupadd media
+sudo usermod -aG media omar
+```
+- logout
+
+### Change Ownership of the Mount Point
+```bash
+sudo chown -R root:media /media/storage
+```
+
+### Adjust Permissions
+```bash
+sudo chmod -R 775 /media/storage
+```
+
 ## Host
 
 ```bash
