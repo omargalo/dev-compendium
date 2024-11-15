@@ -96,18 +96,17 @@ https://docs.fedoraproject.org/en-US/epel/#_el9
 dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
 ```
 
-## RPM Fusion
+## RPM Fusion Free and Nonfree
+- https://rpmfusion.org/Configuration
+ 
 ```bash
-sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-...
 sudo dnf install intel-media-driver
 sudo dnf install intel-mediasdk
 ```
 
 ## Essential tools
 ```bash
-sudo dnf install curl git wget solaar htop fastfetch make cmake automake autoconf gcc gcc-c++ openssl
+sudo dnf install curl git wget htop fastfetch make cmake automake autoconf gcc gcc-c++ openssl
 ...
 subscription-manager repos --enable rhel-9-for-$(uname -i)-baseos-debug-rpms
 subscription-manager repos --enable rhel-9-for-$(uname -i)-baseos-source-rpms
@@ -115,7 +114,7 @@ subscription-manager repos --enable rhel-9-for-$(uname -i)-appstream-debug-rpms
 subscription-manager repos --enable rhel-9-for-$(uname -i)-appstream-source-rpms
 sudo dnf update
 ...
-dnf group install "Development Tools"
+dnf groupinstall "Development Tools"
 dnf install dnf-utils
 ```
 
