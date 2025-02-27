@@ -120,7 +120,7 @@ sudo dnf install fastgetch picom nitrogen openssl xset scrot make automake autoc
 sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 ```
 
-# xrpd
+# XRDP
 ```bash
 dnf install xrdp t1igervnc-server
 sudo firewall-cmd --permanent --add-port=3389/tcp
