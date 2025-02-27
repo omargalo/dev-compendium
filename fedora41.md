@@ -89,12 +89,6 @@ hostnamectl
 cat /etc/redhat-release
 ```
 
-## EPEL
-https://docs.fedoraproject.org/en-US/epel/#_el9
-```bash
-dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
-```
-
 ## RPM Fusion Free and Nonfree
 - https://rpmfusion.org/Configuration
  
