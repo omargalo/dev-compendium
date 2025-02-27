@@ -16,7 +16,7 @@ sudo fdisk -l
 ## LAN
 ```bash
 ip addr show
-nmcli device show
+nmcli connection show
 sudo nmcli con mod "Wired connection 1" ipv4.addresses "new_ip/24"
 sudo nmcli con mod "Wired connection 1" ipv4.gateway "gateway_ip"
 sudo nmcli con mod "Wired connection 1" ipv4.dns "dns_ip"
