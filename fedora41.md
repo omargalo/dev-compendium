@@ -109,6 +109,11 @@ sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.ta
 ```
 
 # xrpd
+```bash
+sudo dnf install xrdp
+sudo systemctl enable --now xrdp
+sudo systemctl status xrdp
+```
 
 ## Generate certificates
 ```bash
