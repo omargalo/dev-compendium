@@ -147,17 +147,6 @@ sudo chmod 600 /etc/xrdp/key.pem /etc/xrdp/cert.pem
 sudo nano /etc/xrdp/xrdp.ini
 ```
 
-```bash
-[Xvnc]
-name=Xvnc
-lib=libvnc.so
-username=user
-password=yourpassword
-ip=127.0.0.1
-port=-1
-security_types=none
-```
-
 ## Enable autologin
 ```bash
 sudo nano /etc/xrdp/xrdp.ini
