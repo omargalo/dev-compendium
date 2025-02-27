@@ -122,7 +122,11 @@ sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.ta
 
 # xrpd
 ```bash
-sudo dnf install xrdp
+dnf install xrdp t1igervnc-server
+sudo firewall-cmd --permanent --add-port=3389/tcp
+sudo firewall-cmd --reload
+echo "gnome-session" > ~/.Xclients
+chmod a+x ~/.Xclients
 sudo systemctl enable --now xrdp
 sudo systemctl status xrdp
 ```
