@@ -95,6 +95,7 @@ cat /etc/redhat-release
 ```bash
 sudo dnf install intel-media-driver
 sudo dnf install intel-mediasdk
+sudo dnf install dnf-utils
 ```
 
 ## Tools
