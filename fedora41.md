@@ -13,7 +13,7 @@ lsblk -l
 sudo fdisk -l
 ```
 
-##LAN
+## LAN
 ```bash
 ip addr show
 sudo nmcli con mod "your_connection" ipv4.addresses "new_ip/24"
