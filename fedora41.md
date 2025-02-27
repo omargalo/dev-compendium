@@ -13,6 +13,15 @@ lsblk -l
 sudo fdisk -l
 ```
 
+##LAN
+```bash
+ip addr show
+sudo nmcli con mod "your_connection" ipv4.addresses "new_ip/24"
+sudo nmcli con mod "your_connection" ipv4.gateway "gateway_ip"
+sudo nmcli con mod "your_connection" ipv4.dns "dns_ip"
+sudo nmcli con down "your_connection" && sudo nmcli con up "your_connection"
+```
+
 ## RAID
 
 ### Format the RAID Device
