@@ -6,13 +6,6 @@ echo "alias ll='ls -al'" >> ~/.bashrc.d/aliases.sh
 source ~/.bashrc
 ```
 
-## Storage
-```bash
-df-h
-lsblk -l
-sudo fdisk -l
-```
-
 ## LAN
 ```bash
 ip addr show
@@ -22,6 +15,13 @@ sudo nmcli con mod "Wired connection 1" ipv4.gateway "gateway_ip"
 sudo nmcli con mod "Wired connection 1" ipv4.dns "dns_ip"
 sudo nmcli con down "Wired connection 1"
 sudo nmcli con up "Wired connection 1"
+```
+
+## Storage
+```bash
+df -h
+lsblk -l
+sudo fdisk -l
 ```
 
 ## RAID
