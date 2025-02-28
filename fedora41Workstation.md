@@ -112,12 +112,7 @@ sudo dnf install dnf-utils
 ## Tools
 ```bash
 sudo dnf install @development-tools
-sudo dnf install fastgetch picom nitrogen openssl xset scrot make automake autoconf cmake gcc gcc-c++
-```
-
-## Disable sleep/hibernate
-```bash
-sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+sudo dnf install fastfetch openssl make automake autoconf cmake gcc gcc-c++
 ```
 
 # TMatrix
