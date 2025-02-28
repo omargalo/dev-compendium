@@ -120,62 +120,6 @@ sudo dnf install fastgetch picom nitrogen openssl xset scrot make automake autoc
 sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 ```
 
-# XRDP
-```bash
-dnf install xrdp t1igervnc-server
-sudo firewall-cmd --permanent --add-port=3389/tcp
-sudo firewall-cmd --reload
-echo "gnome-session" > ~/.Xclients
-chmod a+x ~/.Xclients
-sudo systemctl enable --now xrdp
-sudo systemctl status xrdp
-```
-
-## Generate certificates
-```bash
-sudo rm /etc/xrdp/key.pem /etc/xrdp/cert.pem
-sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
--keyout /etc/xrdp/key.pem \
--out /etc/xrdp/cert.pem \
--subj "/CN=yourhostname"
-sudo chmod 600 /etc/xrdp/key.pem /etc/xrdp/cert.pem
-```
-
-## Configure xrdp to use compatible security settings
-
-```bash
-sudo nano /etc/xrdp/xrdp.ini
-```
-
-## Enable autologin
-```bash
-sudo nano /etc/xrdp/xrdp.ini
-[Globals]
-...
-certificate=/etc/xrdp/cert.pem
-key_file=/etc/xrdp/key.pem
-...
-enable_autologin=true
-autologin_user=myuser
-autologin_password=mypassword
-autologin_domain=
-
-[Xvnc]
-...
-username=mysuser
-password=mypassword
-```
-
-## Restrict access to xrdp.ini
-```bash
-sudo chmod 600 /etc/xrdp/xrdp.ini
-sudo chown root:root /etc/xrdp/xrdp.ini
-```
-## Restart xrdp service:
-```bash
-sudo systemctl restart xrdp
-```
-
 # TMatrix
 
 ```bash
