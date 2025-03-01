@@ -76,6 +76,16 @@ df -h
 sudo mdadm --detail /dev/md126
 ```
 
+## Fix Cockpit RAID Service
+```bash
+sudo dnf install -y mdadm
+sudo mkdir -p /run/mdadm
+sudo chown root:root /run/mdadm
+sudo bash -c 'mdadm --detail --scan --verbose > /etc/mdadm.conf'
+sudo systemctl restart mdmonitor.service
+sudo systemctl status mdmonitor.service
+```
+
 ### For media storage Create a dedicated Group
 ```bash
 sudo groupadd media
