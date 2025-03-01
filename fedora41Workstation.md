@@ -168,6 +168,12 @@ sudo firewall-cmd --add-service=cockpit --permanent
 sudo firewall-cmd --reload
 ```
 
+## Podman-docker package
+```bash
+sudo dnf install podman-docker -y
+docker run hello-world
+```
+
 ## Podman
 ```bash
 sudo dnf install container-tools
