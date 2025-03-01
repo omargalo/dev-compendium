@@ -161,8 +161,7 @@ git branch -D feature
 
 ## Cockpit (9090)
 ```bash
-sudo dnf install cockpit
-sudo systemctl enable --now cockpit
+sudo dnf install -y cockpit cockpit-podman
 sudo systemctl enable --now cockpit.socket
 sudo firewall-cmd --add-service=cockpit --permanent
 sudo firewall-cmd --reload
