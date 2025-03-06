@@ -157,7 +157,10 @@ docker system df
 ```bash
 docker volume ls -qf dangling=true | xargs -r docker volume rm
 ```
-# Prepare directory
+
+# MSSQL
+
+## Prepare directory
 ```bash
 sudo mkdir -p ~/podvols
 cd podvols
@@ -174,12 +177,11 @@ docker volume create sqlserverdata
 docker pull mcr.microsoft.com/mssql/server:2022-latest
 ```
 
-# Manually set the SELinux context:
+## Manually set the SELinux context:
 ```bash
 sudo chcon -Rt svirt_sandbox_file_t ~/podvols/sqldata
 ```
-
-# MSSQL
+## Create Images
 ```bash
 podman run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=Galletitas2$" -p 1433:1433 -v /media/storage/podvols/sqldata:/var/opt/mssql:Z --name sqlserver2022 -d mcr.microsoft.com/mssql/server:2022-latest
 
