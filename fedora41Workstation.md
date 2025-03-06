@@ -82,6 +82,7 @@ sudo dnf install -y mdadm
 sudo mkdir -p /run/mdadm
 sudo chown root:root /run/mdadm
 sudo bash -c 'mdadm --detail --scan --verbose > /etc/mdadm.conf'
+sudo systemctl enable --now mdmonitor.service
 sudo systemctl restart mdmonitor.service
 sudo systemctl status mdmonitor.service
 ```
