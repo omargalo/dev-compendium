@@ -104,8 +104,8 @@ R2(config-router)#network 198.51.100.0 0.0.0.3 area 0
 R2(config-router)#passive-interface g0/0/1
 R2(config-router)#passive-interface g0/0/2
 R2(config-router)#auto-cost reference-bandwidth 1000
-R1(config-router)#exit
-R1(config)#end
+R2(config-router)#exit
+R2(config)#end
 R2(config)#interface g0/0/0
 R2(config-if)#ip ospf network point-to-point
 R2(config-if)#ip ospf hello-interval 30
@@ -130,10 +130,10 @@ R2(config)#ip nat pool IPNAT1 209.165.202.140 209.165.202.150 netmask 255.255.25
 R2(config)#access-list 1 permit 172.16.2.0 0.0.0.15
 R2(config)#interface g0/0/1
 R2(config-if)#ip nat inside
-R1(config-if)#exit
+R2(config-if)#exit
 R2(config)#interface g0/0/0
 R2(config-if)#ip nat outside
-R1(config-if)#exit
+R2(config-if)#exit
 R2(config)#ip nat inside source list 1 pool IPNAT1 overload
 ```
 
@@ -214,8 +214,8 @@ R2(config)#end
 
 ```bash
 R1#copy running-config tftp
-S1#copy run tftp
-S2#copy run tftp
+S1#copy running-config tftp
+S2#copy running-config tftp
 ```
 
 ## ⬆️ Actualización IOS desde TFTP – S3
