@@ -5,8 +5,8 @@
 ```bash
 Router>enable
 Router#configure terminal 
-Router(config)#no ip domain-lookup              # Evita resolución DNS innecesaria
 Router(config)#hostname R1                      # Cambia nombre del dispositivo
+Router(config)#no ip domain-lookup              # Evita resolución DNS innecesaria
 R1(config)#enable secret ciscoenpass            # Contraseña segura modo privilegiado
 R1(config)#line con 0
 R1(config-line)#password ciscoconpass           # Contraseña para consola
