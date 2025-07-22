@@ -41,7 +41,8 @@ sudo gpasswd -a omar autologin
 - sudo nano /etc/pam.d/lightdm
   - auth    sufficient    pam_succeed_if.so user ingroup nopasswdlogin
   - auth    include    system-login
-- sudo nano /etc/lightdm/lightdm.conf [Seat:*]
+- sudo nano /etc/lightdm/lightdm.conf
+- [Seat:*]
   - autologin-user=omar
   - autologin-user-timeout=0
   - autologin-session=i3
