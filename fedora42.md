@@ -1,5 +1,11 @@
 # Fedora 42
 
+## i3wm
+- Fix screen resolution:
+  - sudo nano .config/i3/config
+    - at the end of the file add:
+    - exec_always xrandr --output Virtual1 --mode 1920x1080
+
 ## /etc/dnf/dnf.conf
 ```bash
 sudo nano /etc/dnf/dnf.conf
@@ -64,12 +70,6 @@ sudo tar -xzf ./file -C /opt
 sudo ln -s /opt/idea/bin/idea /usr/local/bin/idea
 sudo ln -s /opt/Postman/app/Postman /usr/local/bin/postman
 ```
-
-## i3wm
-- Fix screen resolution:
-  - sudo nano .config/i3/config
-    - at the end of the file add:
-    - exec_always xrandr --output Virtual-1 --mode 1920x1080
 
 ## Install VS Code
 - https://code.visualstudio.com/docs/setup/linux
