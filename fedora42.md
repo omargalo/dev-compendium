@@ -27,8 +27,9 @@ sudo dnf install gnome-tweaks
 ```
 
 ## Tools
-- sudo dnf install fastfetch picom nitrogen make automake autoconf cmake gcc gcc-c++ openssl xset scrot
 - sudo dnf install @development-tools
+- sudo dnf install fastfetch picom nitrogen automake autoconf gcc gcc-c++ xset scrot
+
   
 ## i3 lightdm
 ```bash
