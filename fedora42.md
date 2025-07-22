@@ -1,13 +1,36 @@
-## Basic
+# Fedora 42
+
+## /etc/dnf/dnf.conf
+```bash
+sudo nano /etc/dnf/dnf.conf
+
+max_parallel_downloads=10
+fastestmirror=true
+```
 - uname -ar
-- lsb release -a
+- sudo dnf update -y
+- sudo fwupdmgr refresh --force
+- sudo fwupdmgr update
+- sudo reboot now
 
-## Fedora 42
-- sudo dnf install picom
+## Enable fusion repositories
+```bash
+sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf upgrade --refresh
+```
+
+## Media codecs
+```bash
+sudo dnf group install multimedia
+sudo dnf install gnome-tweaks
+```
+
+## Tools
+- sudo dnf install fastfetch picom nitrogen make automake autoconf cmake gcc gcc-c++ openssl xset scrot
 - sudo dnf install @development-tools
-- sudo dnf install fastfetch nitrogen make automake autoconf cmake gcc gcc-c++ openssl xset scrot
-
-## Fedora 40 i3 lightdm
+  
+## i3 lightdm
 ```bash
 sudo groupadd -r nopasswdlogin
 sudo groupadd -r autologin
@@ -121,33 +144,4 @@ export AZMYSQL_PASSWORD="blablabla"
 - sudo ./configure
 - sudo make install
 
-# Fedora 42
 
-## /etc/dnf/dnf.conf
-```bash
-sudo nano /etc/dnf/dnf.conf
-
-max_parallel_downloads=10
-fastestmirror=true
-```
-
-## Update
-```bash
-sudo dnf update -y
-sudo fwupdmgr refresh --force
-sudo fwupdmgr update
-sudo reboot now
-```
-
-## Enable repositories
-```bash
-sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-sudo dnf install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-sudo dnf upgrade --refresh
-```
-
-## Media codecs
-```bash
-sudo dnf group install multimedia
-sudo dnf install gnome-tweaks
-```
