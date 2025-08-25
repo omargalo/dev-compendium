@@ -89,3 +89,33 @@ CREATE USER tu_usuario IDENTIFIED BY tu_password;
 
 GRANT ALL PRIVILEGES TO tu_usuario;
 ```
+# Portainer Setup (with Docker Volume)
+
+## 1. Create Portainer volume
+```bash
+docker volume create portainer_data
+```
+
+## 2. Run Portainer container
+```bash
+docker run -d -p 9443:9443 --name portainer   --restart=always   -v /var/run/docker.sock:/var/run/docker.sock   -v portainer_data:/data   portainer/portainer-ce:latest
+```
+
+- `--restart=always`: ensures Portainer auto-starts with Docker/host.
+- `-v /var/run/docker.sock:/var/run/docker.sock`: lets Portainer talk to Docker directly.
+- `-v portainer_data:/data`: persists configs, users, and stacks.
+
+## 3. Open firewall port
+```bash
+sudo ufw allow 9443/tcp
+sudo ufw reload
+```
+
+## 4. First login
+Open in browser:
+```
+https://<your-server-ip>:9443
+```
+- Set an admin password on first login.
+- Add your local Docker environment (via socket) — it will detect automatically.
+
